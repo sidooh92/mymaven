@@ -1,6 +1,7 @@
 package com.mymaven;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,8 +41,13 @@ public class Main {
             return t;
         }).collect(Collectors.toList());
 
-        collect.forEach(System.out::println);
+        List<Teammate> listWthRing = collect
+                .stream()
+                .filter(teamMember -> !teamMember.isHasRing())
+                .collect(Collectors.toList());
 
+        //listWthRing.forEach(p -> System.out.println(p));
+        listWthRing.forEach(System.out::println);
 
     }
 }
