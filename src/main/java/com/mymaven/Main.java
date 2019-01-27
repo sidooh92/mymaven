@@ -1,9 +1,11 @@
 package com.mymaven;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.sql.SQLOutput;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -54,14 +56,22 @@ public class Main {
         //tzn kolekcja glowna:
             //kolekcjaJEDEN zawiera elementy robert, piotrowski
             //kolekjcaDWA zawiera elementy bob, piotrowski
-        List<List<String>> names = Arrays.asList(
-                Arrays.asList("Robert","piotrowski"),
-                Arrays.asList("bob","piotrowski"));
+//         List<List<String>> names = Arrays.asList(
+//                Arrays.asList("Robert","piotrowski"),
+//                Arrays.asList("bob","piotrowski"));
+//
+//        List<String> stringList = names
+//                .stream()
+//                .flatMap(Collection::stream)
+//                .collect(Collectors.toList());
+//        stringList.forEach(System.out::println);
 
-        List<String> stringList = names
-                .stream()
-                .flatMap(Collection::stream)
-                .collect(Collectors.toList());
+        LocalDateTime localDateTime =  LocalDateTime.now();
+        System.out.println("time is " + localDateTime);
+
+        LocalTime newYork = LocalTime.now(ZoneId.of("America/New_York"));
+        System.out.println("NY" + newYork);
+
 
 
     }
